@@ -1,14 +1,17 @@
-goods = int(input("Введите количество товара: "))
-n = 1
-my_dict = []
-my_list = []
-my_analys = {}
-while n <= goods:
-    my_dict = dict({'название': input("введите название: "), 'цена': input("Введите цену: "),
-                    'количество': input('Введите количество: '), 'eд': input("Введите единицу измерения: ")})
-    my_list.append((n, my_dict))
-    n += 1
-    my_analys = dict(
-        {'название': my_dict.get('название'), 'цена': my_dict.get('цена'), 'количество': my_dict.get('количество')})
-print(my_list)
-print(my_analys)
+from itertools import count
+from itertools import cycle
+
+def my_count_func(start_number, stop_number):
+    for el in count(start_number):
+        if el > stop_number:
+            break
+        else:
+            print(el)
+def my_cycle_func(my_list, iteration):
+    i = 0
+    iter = cycle(my_list)
+    while i < iteration:
+        print(next(iter))
+        i+=1
+my_count_func(start_number = int(input("С какого числа начать?: ")), stop_number = int(input("На каком закончить?: ")))
+my_cycle_func(my_list = [1, 2], iteration = int(input("Введите итератор: ")))

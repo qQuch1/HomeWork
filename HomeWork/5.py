@@ -1,16 +1,6 @@
-number = int(input("Введите число: "))
-my_list = [7, 5, 3, 3, 2]
-a = my_list.count(number)
-for element in my_list:
-    if a > 0:
-        i = my_list.index(number)
-        my_list.insert(i+a, number)
-        break
-    else:
-        if number > element:
-            i = my_list.index(element)
-            my_list.insert(i, number)
-            break
-        elif number < my_list[len(my_list) - 1]:
-            my_list.append(number)
-print(my_list)
+from functools import reduce
+
+def my_func(el_p, el):
+    return el_p * el
+print(f'Список четных значений {[el for el in range(99, 1001) if el % 2 == 0]}')
+print(f'Результат перемножения всех элементов списка {reduce(my_func, [el for el in range(99, 1001) if el % 2 == 0])}')

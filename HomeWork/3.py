@@ -1,12 +1,1 @@
-season = {"Зима" : (1,2,12),
-          "Весна" : (3,4,5),
-          "Лето" : (6,7,8),
-          "Осень" : (9,10,11)
-          }
-number = int(input("Введите номер месяца: "))
-while number >= 13 or number <= 0:
-    number = int(input("Введите номер месяца: "))
-
-for key in season.keys():
-    if number in season[key]:
-        print(key)
+print(f'Числа от 20 до 240 кратные 20 или 21 - {[el for el in range(20, 241) if el % 20 == 0 or el % 21 == 0]}')

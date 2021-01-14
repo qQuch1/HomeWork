@@ -1,6 +1,3 @@
-text = input("Введите строку: ")
-a = text.split(" ")
-for i, num in enumerate(a, 1):
-    if len(num) > 10:
-        num = num[0:10]
-    print(f"{i} - {num}")
+my_list = [1, 4, 4, 2, 3, 2, 8, 10, 8, 5]
+my_new_list = [el for el in my_list if my_list.count(el) < 2]
+print(my_new_list)
